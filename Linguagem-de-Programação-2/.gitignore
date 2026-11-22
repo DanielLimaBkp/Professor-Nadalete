@@ -7,3 +7,4 @@ data/
 *.db-wal
 .idea/
 .vscode/
+/.mvn/repository/
