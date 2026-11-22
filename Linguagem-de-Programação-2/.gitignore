@@ -1,0 +1,9 @@
+target/
+target-verificacao/
+.tools/
+data/
+*.db
+*.db-shm
+*.db-wal
+.idea/
+.vscode/

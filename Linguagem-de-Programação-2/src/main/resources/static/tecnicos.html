@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGOS - Técnicos</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="api.js" defer></script>
+    <script src="tecnicos.js" defer></script>
+</head>
+<body>
+    <header><div class="conteudo"><h1>SIGOS</h1><p>Técnicos</p></div></header>
+    <main>
+        <a class="voltar" href="/">← Voltar ao menu</a>
+        <p id="mensagem" role="status" aria-live="polite"></p>
+        <section aria-labelledby="titulo-formulario">
+            <h2 id="titulo-formulario">Novo cadastro</h2>
+            <form id="form-cadastro">
+                <fieldset id="campos-formulario">
+                    <legend class="dica">Preencha todos os campos.</legend>
+                    <div class="campos">
+                        <input type="hidden" id="codigo">
+                        <div><label for="nome">Nome</label><input id="nome" type="text" required></div>
+                        <div><label for="email">Email</label><input id="email" type="email" required></div>
+                        <div><label for="especialidade">Especialidade</label><input id="especialidade" type="text" required></div>
+                    </div>
+                    <div class="acoes">
+                        <button type="submit">Salvar</button>
+                        <button id="btn-cancelar" class="secundario" type="button">Limpar / cancelar</button>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+        <section aria-labelledby="titulo-lista">
+            <div class="lista-topo">
+                <h2 id="titulo-lista">Cadastros</h2>
+                <button id="btn-atualizar" class="secundario" type="button">Atualizar lista</button>
+            </div>
+            <div class="rolagem">
+                <table>
+                    <thead><tr><th scope="col">Código</th><th scope="col">Nome</th><th scope="col">Email</th><th scope="col">Especialidade</th><th scope="col">Ações</th></tr></thead>
+                    <tbody id="lista-cadastros"></tbody>
+                </table>
+            </div>
+        </section>
+        <section aria-labelledby="titulo-tipo-servico-habilitado">
+            <h2 id="titulo-tipo-servico-habilitado">Tipos de serviço que o técnico pode executar</h2>
+            <p>Selecione um técnico e adicione suas habilitações.</p>
+            <form id="form-tecnico-tipo-servico">
+                <fieldset id="campo-tipo-servico-habilitado">
+                    <div class="campos">
+                        <div><label for="tecnico-habilitado">Técnico</label><select id="tecnico-habilitado" required><option value="">Selecione um técnico</option></select></div>
+                        <div><label for="tipo-servico-habilitado">Tipo de serviço</label><select id="tipo-servico-habilitado" required><option value="">Selecione um tipo de serviço</option></select></div>
+                    </div>
+                    <div class="acoes"><button>Adicionar habilitação</button></div>
+                </fieldset>
+            </form>
+            <div class="rolagem"><table>
+                <thead><tr><th>Código do tipo</th><th>Tipo de serviço</th><th>Descrição</th><th>Ações</th></tr></thead>
+                <tbody id="lista-tipo-servico-habilitado"></tbody>
+            </table></div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGOS - Ordens de serviço</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="api.js" defer></script><script src="ordens.js" defer></script>
+</head>
+<body>
+<header><div class="conteudo"><h1>SIGOS</h1><p>Ordens de serviço</p></div></header>
+<main>
+    <a class="voltar" href="/">← Voltar ao menu</a>
+    <p id="mensagem" role="status" aria-live="polite"></p>
+    <section>
+        <h2 id="titulo-formulario">Abrir ordem de serviço</h2>
+        <p class="dica">Cadastre um cliente e um tipo de serviço antes de abrir a ordem.</p>
+        <form id="form-ordem"><fieldset id="campos-formulario">
+            <div class="campos">
+                <input type="hidden" id="codigo">
+                <div><label for="cliente">Cliente</label><select id="cliente" required><option value="">Selecione</option></select></div>
+                <div><label for="tipo">Tipo de serviço</label><select id="tipo" required><option value="">Selecione</option></select></div>
+                <div><label for="prioridade">Prioridade</label><select id="prioridade" required><option value="BAIXA">Baixa</option><option value="MEDIA" selected>Média</option><option value="ALTA">Alta</option></select></div>
+                <div><label for="titulo">Título</label><input id="titulo" required></div>
+                <div><label for="descricao">Descrição</label><textarea id="descricao" required></textarea></div>
+            </div>
+            <div class="acoes"><button type="submit">Salvar ordem</button><button id="btn-cancelar" type="button" class="secundario">Limpar / cancelar</button></div>
+        </fieldset></form>
+    </section>
+    <section>
+        <div class="lista-topo"><h2>Ordens cadastradas</h2><button id="btn-atualizar" class="secundario">Atualizar lista</button></div>
+        <label for="filtro-cliente">Filtrar por cliente</label><select id="filtro-cliente"><option value="">Todos os clientes</option></select>
+        <p class="dica">Clique em Abrir para gerenciar atividades, técnicos e status.</p>
+        <div class="rolagem"><table><thead><tr><th>Código</th><th>Título</th><th>Cliente</th><th>Tipo de serviço</th><th>Prioridade</th><th>Status</th><th>Ações</th></tr></thead><tbody id="lista-ordens"></tbody></table></div>
+    </section>
+</main>
+</body>
+</html>

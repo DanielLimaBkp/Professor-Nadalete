@@ -1,0 +1,28 @@
+body { font-family: Arial, sans-serif; margin: 20px; color: black; background: white; }
+header { border-bottom: 1px solid #999; margin-bottom: 16px; }
+header h1 { margin-bottom: 5px; }
+main { max-width: 1100px; }
+section { margin: 22px 0; }
+h2 { font-size: 20px; }
+.voltar { display: inline-block; margin-bottom: 8px; }
+.menu a { display: inline-block; padding: 7px 12px; margin: 5px; border: 1px solid #999; color: black; background: #eee; text-decoration: none; }
+fieldset { border: 1px solid #aaa; padding: 12px; min-width: 0; }
+.campos > div { margin-bottom: 10px; }
+label { display: block; margin-bottom: 4px; }
+input:not([type="hidden"]), select, textarea { width: 280px; max-width: 100%; box-sizing: border-box; padding: 4px; font: inherit; }
+textarea { height: 60px; resize: vertical; }
+button { padding: 4px 9px; margin: 3px; cursor: pointer; }
+button:disabled { cursor: default; }
+.acoes { margin-top: 8px; }
+.lista-topo { margin-bottom: 10px; }
+.lista-topo h2 { display: inline-block; margin-right: 12px; }
+.rolagem { overflow-x: auto; }
+table { border-collapse: collapse; margin-top: 12px; }
+th, td { border: 1px solid #999; padding: 6px 8px; text-align: left; }
+th { background: #eee; }
+td select { width: 160px; }
+#mensagem { margin: 12px 0; }
+#mensagem:empty { display: none; }
+#mensagem.erro { color: #a00; }
+#mensagem.sucesso { color: #176324; }
+.dica { font-size: 14px; }

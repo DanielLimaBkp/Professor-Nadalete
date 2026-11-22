@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGOS - Detalhes da ordem</title><link rel="stylesheet" href="style.css">
+    <script src="api.js" defer></script><script src="ordem.js" defer></script>
+</head>
+<body>
+<header><div class="conteudo"><h1>SIGOS</h1><p>Atendimento da ordem de serviço</p></div></header>
+<main>
+    <a class="voltar" href="ordens.html">← Voltar às ordens</a>
+    <p id="mensagem" role="status" aria-live="polite"></p>
+    <section>
+        <div class="lista-topo"><h2 id="titulo-ordem">Carregando ordem...</h2><button id="btn-atualizar" class="secundario">Atualizar</button></div>
+        <p id="descricao-ordem"></p><p id="resumo-ordem"></p><p id="data-abertura" class="dica"></p>
+        <form id="form-status"><fieldset id="campos-status" disabled>
+            <label for="status-ordem">Status da ordem</label>
+            <select id="status-ordem"><option value="ABERTA">Aberta</option><option value="EM_ANDAMENTO">Em andamento</option><option value="CONCLUIDA">Concluída</option><option value="CANCELADA">Cancelada</option></select>
+            <div class="acoes"><button>Atualizar status</button></div>
+        </fieldset></form>
+        <p class="dica">Para concluir, todas as atividades devem estar concluídas. Ordens encerradas ficam bloqueadas para edição.</p>
+    </section>
+    <section>
+        <h2>Atividades da ordem</h2>
+        <form id="form-atividade"><fieldset id="campos-atividade" disabled>
+            <div class="campos">
+                <input type="hidden" id="codigo-atividade">
+                <div><label for="descricao-atividade">Descrição da atividade</label><input id="descricao-atividade" required></div>
+            </div>
+            <div class="acoes"><button>Salvar atividade</button><button id="btn-cancelar-atividade" type="button" class="secundario">Limpar / cancelar</button></div>
+        </fieldset></form>
+        <div class="rolagem"><table><thead><tr><th>Código</th><th>Descrição</th><th>Status</th><th>Conclusão</th><th>Ações</th></tr></thead><tbody id="lista-atividades"></tbody></table></div>
+    </section>
+    <section>
+        <h2>Técnicos responsáveis</h2>
+        <p class="dica">Somente técnicos habilitados para este tipo de serviço aparecem na lista. Cadastre as habilitações em <a href="tecnicos.html">Técnicos</a>.</p>
+        <form id="form-tecnico"><fieldset id="campos-tecnico" disabled>
+            <label for="tecnico">Técnico</label><select id="tecnico" required><option value="">Selecione um técnico</option></select>
+            <div class="acoes"><button>Atribuir técnico</button></div>
+        </fieldset></form>
+        <div class="rolagem"><table><thead><tr><th>Código</th><th>Nome</th><th>Especialidade</th><th>Ações</th></tr></thead><tbody id="lista-tecnicos"></tbody></table></div>
+    </section>
+</main>
+</body>
+</html>

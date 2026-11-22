@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGOS - Tipos de serviço</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="api.js" defer></script>
+    <script src="tipos-servico.js" defer></script>
+</head>
+<body>
+    <header><div class="conteudo"><h1>SIGOS</h1><p>Tipos de serviço</p></div></header>
+    <main>
+        <a class="voltar" href="/">← Voltar ao menu</a>
+        <p id="mensagem" role="status" aria-live="polite"></p>
+        <section aria-labelledby="titulo-formulario">
+            <h2 id="titulo-formulario">Novo cadastro</h2>
+            <p class="dica">Cadastre uma <a href="categorias.html">categoria</a> antes de adicionar um tipo de serviço.</p>
+            <form id="form-cadastro">
+                <fieldset id="campos-formulario">
+                    <legend class="dica">Preencha todos os campos.</legend>
+                    <div class="campos">
+                        <input type="hidden" id="codigo">
+                        <div><label for="nome">Nome</label><input id="nome" type="text" required></div>
+                        <div><label for="descricao">Descrição</label><textarea id="descricao" required></textarea></div>
+                        <div><label for="categoria">Categoria</label><select id="categoria" required><option value="">Selecione uma categoria</option></select></div>
+                    </div>
+                    <div class="acoes">
+                        <button type="submit">Salvar</button>
+                        <button id="btn-cancelar" class="secundario" type="button">Limpar / cancelar</button>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+        <section aria-labelledby="titulo-lista">
+            <div class="lista-topo">
+                <h2 id="titulo-lista">Cadastros</h2>
+                <button id="btn-atualizar" class="secundario" type="button">Atualizar lista</button>
+            </div>
+            <div class="rolagem">
+                <table>
+                    <thead><tr><th scope="col">Código</th><th scope="col">Nome</th><th scope="col">Descrição</th><th scope="col">Categoria</th><th scope="col">Ações</th></tr></thead>
+                    <tbody id="lista-cadastros"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
